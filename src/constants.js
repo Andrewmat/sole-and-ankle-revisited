@@ -1,18 +1,17 @@
-export const COLORS = {
-  white: 'hsl(0deg 0% 100%)',
-  gray: {
-    100: 'hsl(185deg 5% 95%)',
-    300: 'hsl(190deg 5% 80%)',
-    500: 'hsl(196deg 4% 60%)',
-    700: 'hsl(220deg 5% 40%)',
-    900: 'hsl(220deg 3% 20%)',
-  },
-  primary: 'hsl(340deg 65% 47%)',
-  secondary: 'hsl(240deg 60% 63%)',
-};
-
 export const WEIGHTS = {
   normal: 500,
   medium: 600,
   bold: 800,
+};
+
+export const BREAKPOINTS = {
+  LAPTOP_MIN: 81.25,
+  TABLET_MIN: 59.375,
+  PHONE_MIN: 37.5,
+};
+
+export const MEDIA_QUERIES = {
+  LAPTOP_DOWN: `(max-width: ${BREAKPOINTS.LAPTOP_MIN}rem)`,
+  TABLET_DOWN: `(max-width: ${BREAKPOINTS.TABLET_MIN}rem)`,
+  PHONE_DOWN: `(max-width: ${BREAKPOINTS.PHONE_MIN}rem)`,
 };

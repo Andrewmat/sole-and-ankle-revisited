@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { WEIGHTS } from '../../constants';
+import { COLORS } from '../GlobalStyles/GlobalStyles';
 
 const Sidebar = () => {
   return (

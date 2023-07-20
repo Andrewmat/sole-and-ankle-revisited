@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { WEIGHTS } from '../../constants';
 import { formatPrice, pluralize, isNewShoe } from '../../utils';
 import Spacer from '../Spacer';
+import { COLORS } from '../GlobalStyles/GlobalStyles';
 
 const ShoeCard = ({
   slug,
@@ -37,17 +38,14 @@ const ShoeCard = ({
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
           {variant === 'on-sale' && <SaleFlag>Sale</SaleFlag>}
-          {variant === 'new-release' && (
-            <NewFlag>Just released!</NewFlag>
-          )}
+          {variant === 'new-release' && <NewFlag>Just released!</NewFlag>}
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
           <Price
             style={{
-              '--color':
-                variant === 'on-sale' ? COLORS.gray[700] : undefined,
+              '--color': variant === 'on-sale' ? COLORS.gray[700] : undefined,
               '--text-decoration':
                 variant === 'on-sale' ? 'line-through' : undefined,
             }}

@@ -1,5 +1,33 @@
 import { createGlobalStyle } from 'styled-components/macro';
 
+export const COLORS_VAR_NAMES = {
+  white: '--color-white',
+  gray: {
+    100: '--color-gray-100',
+    300: '--color-gray-300',
+    500: '--color-gray-500',
+    700: '--color-gray-700',
+    '700/80': '--color-gray-700-80',
+    900: '--color-gray-900',
+  },
+  primary: '--color-primary',
+  secondary: '--color-secondary',
+};
+
+export const COLORS = {
+  white: 'var(--color-white)',
+  gray: {
+    100: 'var(--color-gray-100)',
+    300: 'var(--color-gray-300)',
+    500: 'var(--color-gray-500)',
+    700: 'var(--color-gray-700)',
+    '700/80': 'var(--color-gray-700-80)',
+    900: 'var(--color-gray-900)',
+  },
+  primary: 'var(--color-primary)',
+  secondary: 'var(--color-secondary)',
+};
+
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -75,6 +103,19 @@ html {
 
 html, body, #root {
   height: 100%;
+}
+
+body {
+  ${COLORS_VAR_NAMES.white}: hsl(0deg 0% 100%);
+  ${COLORS_VAR_NAMES.primary}: hsl(340deg 65% 47%);
+  ${COLORS_VAR_NAMES.secondary}: hsl(240deg 60% 63%);
+  ${COLORS_VAR_NAMES.gray[100]}: hsl(185deg 5% 95%);
+  ${COLORS_VAR_NAMES.gray[300]}: hsl(190deg 5% 80%);
+  ${COLORS_VAR_NAMES.gray[500]}: hsl(196deg 4% 60%);
+  ${COLORS_VAR_NAMES.gray[700]}-hsl: 220deg 5% 40%;
+  ${COLORS_VAR_NAMES.gray[700]}: hsl(var(${COLORS_VAR_NAMES.gray[700]}-hsl));
+  ${COLORS_VAR_NAMES.gray['700/80']}: hsl(var(${COLORS_VAR_NAMES.gray[700]}-hsl) / 0.8);
+  ${COLORS_VAR_NAMES.gray[900]}: hsl(220deg 3% 20%);
 }
 `;
 

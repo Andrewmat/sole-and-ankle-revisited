@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS } from '../../constants';
+import { MEDIA_QUERIES } from '../../constants';
 
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
+import { COLORS } from '../GlobalStyles/GlobalStyles';
 
 const SuperHeader = () => {
   return (
@@ -32,6 +33,10 @@ const Wrapper = styled.div`
   height: 40px;
   padding-left: 32px;
   padding-right: 32px;
+
+  @media ${MEDIA_QUERIES.TABLET_DOWN} {
+    display: none;
+  }
 `;
 
 const MarketingMessage = styled.span`
